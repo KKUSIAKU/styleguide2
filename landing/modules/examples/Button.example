@@ -1,0 +1,20 @@
+<div>
+  <Button type="primary" size="sm">Primary</Button>
+  <Button type="default" size="sm">Default</Button>
+  <Button type="success" size="sm">Success</Button>
+  <Button type="error" size="sm">Danger</Button>
+
+  <hr />
+
+  <Button type="primary">Primary</Button>
+  <Button type="default">Default</Button>
+  <Button type="success">Success</Button>
+  <Button type="error">Danger</Button>
+
+  <hr />
+  
+  <Button type="primary" size="lg">Primary</Button>
+  <Button type="default" size="lg">Default</Button>
+  <Button type="success" size="lg">Success</Button>
+  <Button type="error" size="lg">Danger</Button>
+</div>

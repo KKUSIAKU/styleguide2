@@ -1,0 +1,699 @@
+@import '../src/index'
+$aside_width = 250px;
+
+[data-group]
+  min-height: 100vh;
+  display: none;
+
+  &.active
+    display: block;
+
+.main-content-styleguide
+  +breakpoint("tablet")
+    margin-left: $aside_width;
+
+.navbar-toggle
+  display: none;
+
+.sr-only
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+
+// container styleguide
+.container-styleguide
+  width 100%
+  min-width 320px
+
+// content styleguide
+.main-content-styleguide
+  background-color: #fff;
+
+  &.alt
+    background-color: #fafafa;
+
+// aside styleguide
+.aside-styleguide
+  overflow-y: auto;
+  background-color: #f1f1f1;
+
+  +breakpoint("tablet")
+    width: $aside_width;
+    position: fixed;
+    height:100vh;
+
+  .header
+    background-color: #f9f9f9;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+
+    .navbar-toggle
+      position: absolute;
+      top: 5px;
+      right: -5px;
+      .icon-bar
+        background: #5c666f;
+
+    h1
+      margin: 15px 0 14px 0;
+
+
+    a, img
+      display: block;
+      margin: 0 auto;
+
+    img
+      width: 30px;
+
+
+  .footer
+    background-color: rgba(0, 0, 0, .05);
+    padding: 5px 0;
+    text-align: center;
+
+    +breakpoint('tablet')
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+
+    span
+      color: rgba(0, 0, 0, .4);
+      font-size: 11px;
+      letter-spacing: 1px;
+      line-height: normal;
+
+#menu.collapse
+  +breakpoint("tablet")
+    display: block !important;
+    height: auto !important;
+
+.nav-styleguide
+  overflow-y: auto
+
+  & > ul
+    color: $color-text-light;
+    font-size: 11px;
+    letter-spacing: 1px;
+    list-style: none;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    z-index: 200;
+    position: relative;
+
+    .active
+      color: #333 !important;
+      background: darken(#e3e5e7, 4%);
+
+    > li
+      margin: 0;
+
+      &:first-child
+        display: none;
+
+      > a
+        border-bottom: 1px solid rgba(0, 0, 0, .08);
+        color: inherit;
+        display: block;
+        padding: 20px 20px 20px 20px;
+        text-decoration none
+        font-weight: 500;
+
+        > svg
+          margin-right: 8px;
+          top: -1px;
+          position: relative;
+          width: 14px;
+          height: 14px;
+          display: inline-block
+          opacity: .7;
+
+
+.nav-styleguide > ul > li > ul
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+
+  +breakpoint("tablet")
+    display: inherit;
+    display: none;
+
+  .active
+    background: rgba(255,255,255,0.05);
+
+  li
+    background-color: rgba(255, 255, 255, .3);
+    margin: 1px 0 0 0;
+
+    &:first-child
+      margin-top: 0;
+
+    a
+      background-color: rgba(255, 255, 255, .3);
+      color: inherit;
+      display: block;
+      padding: 10px 0 10px 42px;
+      text-transform: none;
+      letter-spacing: 0;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+
+
+// content styleguide
+.content-styleguide
+
+  section
+    padding: 20px 20px
+    border-bottom: 1px solid $bg-color-4;
+    +breakpoint("tablet")
+      padding:  60px 90px
+
+    & > h2
+      margin-top: 0;
+
+    .jumbotron
+      margin-bottom: 0;
+
+  .type-box.theme-light
+    background-color: #e3e5e7;
+    margin-bottom: 30px;
+    overflow: hidden;
+
+// Splash Section
+// -------------------------
+.splash
+  background: darken($bg-color-1, 30%)
+  padding: 0;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  flex:1;
+  padding: 0;
+  +breakpoint("tablet")
+    padding-left: 100px;
+
+  .splash-intro
+    .lettering-js
+      span
+        animation-fill-mode: forwards;
+        opacity: 0;
+        display: inline-block;
+
+    h1.lettering-js
+      font-size: 40px;
+      margin: 30px 0;
+      color: white;
+      span
+        animation-name: title
+        animation-duration: .3s
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+
+      for i in (1..100)
+        span:nth-child({i})
+          animation-delay: .08s * i
+
+    @keyframes title
+      0%
+        -webkit-filter: blur(30px);
+        -webkit-transform: scale(2);
+        opacity: 0
+      100%
+        opacity: 1
+        -webkit-transform: scale(1);
+        -webkit-filter: blur(0);
+
+    p
+      font-size: 16px;
+      color: $color-text-contrast-light;
+      margin-bottom: 50px;
+      span
+        animation-name: tagline
+        min-width: 3px;
+        animation-duration: .2s
+
+      span:nth-child(1)
+        animation-delay: 2.2s
+
+      for i in (2..100)
+        span:nth-child({i})
+          animation-delay: 2.2s + (i * 0.025)
+
+
+    @keyframes tagline
+      0%
+        -webkit-filter: blur(10px);
+        opacity: 0
+        transform: translate(0,0);
+
+      100%
+        transform: scale(1);
+        opacity: 1
+        -webkit-filter: blur(0);
+
+    .btn
+      margin-right: 30px;
+      display: block
+      animation-name: btns
+      animation-duration: .4s
+      animation-play-state: running;
+      animation-fill-mode: forwards;
+      opacity: 0;
+
+      &.btn-success
+        animation-delay: 4s
+
+      &.btn-default
+        background: white;
+        animation-delay: 4.1s
+
+      +breakpoint('tablet')
+        display: inline-block;
+
+    @keyframes btns
+      from
+        transform: scale(.8)
+        // -webkit-filter: blur(10px);
+        opacity: 0
+      to
+        transform: scale(1);
+        opacity: 1
+        -webkit-filter: blur(0);
+
+    .lines
+      margin-bottom: 30px
+
+      span
+        height: 3px;
+        background: $primary-color-1;
+        display: inline-block;
+        width: 94px;
+        margin-right: 2px;
+        animation-name: lines
+        animation-duration: .8s
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        &.line-2
+          background-color: $primary-color-2
+          animation-delay .2s
+        &.line-3
+          background-color: $primary-color-3
+          animation-delay .4s
+        &.line-4
+          background-color: $primary-color-4
+          animation-delay .6s
+
+      @keyframes lines
+        from
+          transform: scale(4)
+          -webkit-filter: blur(10px);
+          opacity: 0
+        to
+          transform: scale(1);
+          opacity: 1
+          -webkit-filter: blur(0);
+
+
+// Typography Section
+// -------------------------
+
+.typography-section
+  .font-family
+    font-size: 60px;
+    font-weight: normal;
+    line-height: 82px;
+    margin: 40px 0;
+
+.type-box
+  padding: 20px 40px;
+
+  &.box-table
+    padding: 20px 40px;
+
+  a
+    display: block;
+    margin: 20px 0;
+
+  .theme-dark &
+    background-color: #222228;
+
+
+// typography table
+.box-table
+  overflow-x: scroll;
+  max-width: 100%;
+
+.quote
+  text-align: center;
+
+.typography-table
+  min-width: 600px;
+  width: 100%;
+  overflow: scroll;
+  margin: 0;
+
+  +breakpoint("desktop")
+    min-width: none;
+
+  .variable
+    width: 35%;
+
+  .opacity
+    width: 5%;
+    text-align: right;
+
+  .color
+    width: 8%;
+
+  td
+    color: $color-text;
+    font-size: 14px;
+    padding: 15px 0;
+    border: 0;
+
+  .big
+    font-size: 16px;
+
+  .opacity-87
+    color: $color-text;
+
+  .opacity-54
+    color: $color-text-light;
+
+  .opacity-26
+    color: $color-text-lighter;
+
+  .rowspan
+    line-height: 20px;
+    vertical-align: bottom;
+
+.design-page
+  .theme-dark
+    background-color: $bg-color-1;
+
+    .typography-table
+      td
+        color: $color-text-contrast
+
+      .opacity-100
+        color: $color-text-contrast
+
+      .opacity-70
+        color: $color-text-contrast-light
+
+      .opacity-30
+        color: $color-text-contrast-lighter
+
+
+// grid
+.example-grid span
+  background: $bg-color-4;
+  text-align: center;
+  border-radius: $border-radius;
+  font-size: 1rem;
+  margin-bottom: .75rem;
+  font-weight: 500;
+  display: block;
+  padding: 30px 10px;
+
+.color
+  border-radius: 3px
+  padding: 20px
+  margin-bottom: 20px
+  padding-top: 80%
+  position: relative
+
+  .color-info
+    background-color: rgba(black, .1)
+    color: $color-text-white
+    display: block
+    line-height: 22px
+    margin: 0 -20px -20px -20px
+    padding: 20px
+
+    strong
+      display: block
+      font-weight: 600;
+      margin-bottom: 6px;
+
+    span
+      text-transform uppercase
+      font-family $font-family-mono
+
+// Primary
+.primary-color-1
+  background-color: $primary-color-1
+
+.primary-color-2
+  background-color: $primary-color-2
+
+.primary-color-3
+  background-color: $primary-color-3
+
+.primary-color-4
+  background-color: $primary-color-4
+
+// Secondary
+.secondary-color-1
+  background-color: $secondary-color-1
+
+.secondary-color-2
+  background-color: $secondary-color-2
+
+.secondary-color-3
+  background-color: $secondary-color-3
+
+.secondary-color-4
+  background-color: $secondary-color-4
+
+// Background
+.bg-color-1
+  background-color: $bg-color-1
+
+.bg-color-2
+  background-color: $bg-color-2
+
+.bg-color-3
+  background-color: $bg-color-3
+  .color-info
+    color: $color-text-black
+.bg-color-4
+  background-color: $bg-color-4
+  .color-info
+    color: $color-text-black
+
+// Status
+.bg-status-error
+  background-color: $bg-status-error
+
+.bg-status-alert
+  background-color: $bg-status-warning
+
+.bg-status-success
+  background-color: $bg-status-success
+
+.bg-status-info
+  background-color: $bg-status-info
+
+:export { primaryColor1: $primary-color-1; }
+:export { primaryColor2: $primary-color-2; }
+:export { primaryColor3: $primary-color-3; }
+:export { primaryColor4: $primary-color-4; }
+
+:export { secondaryColor1: $secondary-color-1 }
+:export { secondaryColor2: $secondary-color-2 }
+:export { secondaryColor3: $secondary-color-3 }
+:export { secondaryColor4: $secondary-color-4 }
+
+:export { bgColor1: $bg-color-1 }
+:export { bgColor2: $bg-color-2 }
+:export { bgColor3: $bg-color-3 }
+:export { bgColor4: $bg-color-4 }
+
+:export { bgStatusSuccess: $bg-status-success }
+:export { bgStatusInfo: $bg-status-info }
+:export { bgStatusAlert: $bg-status-warning }
+:export { bgStatusError: $bg-status-error }
+
+// Hue Palette
+.hue-palette
+  border-radius: $border-radius
+  color: #fff
+  line-height: $line-height
+  list-style: none
+  margin: 0 0 20px 0
+  padding: 0
+  overflow: hidden
+  text-transform: uppercase;
+  font-family $font-family-mono
+
+  li
+    display: block
+    overflow: hidden
+    margin: 0
+    padding: 20px
+
+    strong
+      float: right
+
+  .hex
+    float: left
+
+  li:nth-child(1)
+    background-color: rgba(white, .3)
+
+  li:nth-child(2)
+    background-color: rgba(white, .2)
+
+  li:nth-child(3)
+    background-color: rgba(white, .1)
+
+  li:nth-child(5)
+    background-color: rgba(black, .1)
+
+  li:nth-child(6)
+    background-color: rgba(black, .2)
+
+  li:nth-child(7)
+    background-color: rgba(black, .3)
+
+
+.icon-box
+  box-shadow: 0 0 10px rgba(0,0,0,.1)
+  padding: 10px;
+  min-width: 220px;
+  max-width: 220px;
+  float: left;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-right: 20px;
+  svg
+    width: 50px;
+    height: 50px;
+
+  strong
+    display: block;
+    height: 20px;
+
+.playground
+  margin-bottom: 50px;
+
+  &:last-child
+    margin-bottom: 0;
+
+  :global
+    .preview_code
+      border-radius: 3px;
+      overflow: hidden;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+    h5
+      margin-top: 0;
+
+    hr
+      margin: 10px 0 20px 0;
+
+    button
+      margin-right: 20px;
+
+    .playgroundCode
+      margin-top: 20px;
+
+:global
+  .CodeMirror
+    height: auto;
+    font-family: $font-family-mono;
+    &.cm-s-sb
+      background-color: #222;
+      color: rgba(233, 237, 237, 1);
+      border-radius 3px
+      font-size: 12px;
+      padding: 14px;
+      .CodeMirror-line
+        line-height $line-height * .8;
+      .CodeMirror-gutters
+        background: #202A2F;
+        color: rgb(83,127,126);
+        border: none;
+      .CodeMirror-linenumber
+        left: auto;
+        background-color: #202A2F;
+        padding-right: 10px;
+      .cm-s-auth0.CodeMirror-scroll
+        border-radius 3px
+      .cm-s-auth0.CodeMirror
+        background-color: darken(#263238, 5%);
+        transition background-color 0.3s ease-in-out
+      .cm-s-auth0.CodeMirror-focused
+        background-color: #263238;
+      .CodeMirror-guttermarker, .CodeMirror-guttermarker-subtle, .CodeMirror-linenumber
+        color: rgba(255,255,255,.5);
+      div.CodeMirror-cursor
+        border-left: 1px solid #f8f8f0;
+      div.CodeMirror-selected
+        background: rgba(255, 255, 255, 0.15);
+      .cm-s-auth0.CodeMirror-focused div.CodeMirror-selected
+        background: rgba(255, 255, 255, 0.10);
+      .CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection
+        background: rgba(255, 255, 255, 0.10);
+      .CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection
+        background: rgba(255, 255, 255, 0.10);
+      .CodeMirror-hscrollbar::-webkit-scrollbar-track
+        background-color: #263238;
+      .CodeMirror-scroll::-webkit-scrollbar-track
+        background-color: #263238;
+      .CodeMirror-activeline-background
+        background: rgba(0, 0, 0, 0);
+      .cm-keyword
+        color: #ff9a56;
+      .cm-operator
+        color: rgba(233, 237, 237, 1);
+      .cm-variable-2
+        color: #40C2EF;
+      .cm-variable-3
+        color: rgba(233, 237, 237, 1);
+      .cm-builtin
+        color: #DECB6B;
+      .cm-atom
+        color: #40C2EF;
+      .cm-number
+        color: #40C2EF;
+      .cm-def
+        color: rgba(233, 237, 237, 1);
+      .cm-string
+        color: #00fcd4;
+      .cm-string-2
+        color: #80CBC4;
+      .cm-comment
+        color: #546E7A;
+      .cm-variable
+        color: #FFA0E7;
+      .cm-tag
+        color: #ff9a56;
+      .cm-meta
+        color: #80CBC4;
+      .cm-attribute
+        color: #FFA0E7;
+      .cm-property
+        color: #40C2EF;
+      .cm-qualifier
+        color: #FFA0E7;
+      .cm-error
+        color: rgba(255, 255, 255, 1.0);
+        background-color: #EC5F67;
+
+      .CodeMirror-matchingbracket
+        text-decoration: underline;
+        color: white !important;

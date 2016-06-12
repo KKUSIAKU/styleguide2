@@ -1,0 +1,6 @@
+<div>
+  <Alert type="success"><strong>Success!</strong> You successfully read this important <a href="http://twiter.com/rickyrauch">alert link</a> message.</Alert>
+  <Alert type="warning"><strong>Warning!</strong> You successfully read this important <a href="http://twiter.com/rickyrauch">alert link</a> message.</Alert>
+  <Alert type="danger"><strong>Danger!</strong> This alert needs your <a href="http://twiter.com/rickyrauch">alert link</a> message.</Alert>
+  <Alert type="info"><strong>Head Ups!</strong> This alert needs your <a href="http://twiter.com/rickyrauch">alert link</a> message.</Alert>
+</div>

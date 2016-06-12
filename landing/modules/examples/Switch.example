@@ -1,0 +1,6 @@
+<div>
+<Switch />
+<Switch checked={true}/>
+<Switch disabled={true}/>
+<Switch checked={true} disabled={true}/>
+</div>

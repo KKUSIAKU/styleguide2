@@ -1,0 +1,13 @@
+<div>
+  <Row around="xs">
+    <Col xs={2}><Panel/></Col>
+    <Col xs={2}><Panel/></Col>
+    <Col xs={2}><Panel/></Col>
+  </Row>
+
+  <Row between="xs">
+    <Col xs={2}><Panel/></Col>
+    <Col xs={2}><Panel/></Col>
+    <Col xs={2}><Panel/></Col>
+  </Row>
+</div>

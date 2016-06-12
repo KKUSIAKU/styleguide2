@@ -1,0 +1,4 @@
+<Row>
+  <Col xs={6} sm={6} md={8} lg={10}><Panel/></Col>
+  <Col xs={6} sm={6} md={2} lg={1}><Panel/></Col>
+</Row>

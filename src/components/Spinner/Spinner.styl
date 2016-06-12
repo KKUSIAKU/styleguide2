@@ -1,0 +1,73 @@
+.spinner
+  font-size: 40px;
+  margin: 10px 0;
+  height: 1em;
+  width: 1em;
+  animation: fadeIn 0.5s linear;
+  position: relative;
+
+  &.spinner-xs
+    font-size: 14px;
+
+  &.spinner-sm
+    font-size: 20px;
+
+  &.spinner-md
+    font-size: 40px;
+
+  &.spinner-lg
+    font-size: 60px;
+
+  &.spinner-center
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  &:before
+    content: "";
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 0.45em;
+    width: 0.45em;
+    background-size: 0.39em 0.43em;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    opacity: 0.2;
+
+  .circle
+    position: relative;
+    text-indent: -9999em;
+    border-top: 2px solid rgba(0,0,0, 0.08);
+    border-right: 2px solid rgba(0,0,0, 0.08);
+    border-bottom: 2px solid rgba(0,0,0, 0.08);
+    border-left: 2px solid rgba(0,0,0, 0.4);
+    -webkit-animation: loaderAnim 0.8s infinite linear;
+    animation: loaderAnim 0.8s infinite linear;
+
+    &,
+    &:after
+      border-radius: 50%;
+      width: 1em;
+      height: 1em;
+
+.theme-dark
+  .spinner .circle
+    border-top-color: rgba(255,255,255, 0.2);
+    border-right-color: rgba(255,255,255, 0.2);
+    border-bottom-color: rgba(255,255,255, 0.2);
+    border-left-color: rgba(255,255,255, 1);
+
+@keyframes loaderAnim
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)

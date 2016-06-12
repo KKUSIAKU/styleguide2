@@ -1,0 +1,6 @@
+<div>
+<Spinner size="xs"/>
+<Spinner size="sm"/>
+<Spinner size="md"/>
+<Spinner size="lg"/>
+</div>

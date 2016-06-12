@@ -1,0 +1,25 @@
+<div>
+  <Row>
+    <Col xs={12}>
+      <Row start="xs">
+        <Col xs={6}><Panel/></Col>
+      </Row>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col xs={12}>
+      <Row center="xs">
+        <Col xs={6}><Panel/></Col>
+      </Row>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col xs={12}>
+      <Row end="xs">
+        <Col xs={6}><Panel/></Col>
+      </Row>
+    </Col>
+  </Row>
+</div>

@@ -1,0 +1,13 @@
+<Row>
+  <Col xsOffset={11} xs={1}><Panel/></Col>
+  <Col xsOffset={10} xs={2}><Panel/></Col>
+  <Col xsOffset={9} xs={3}><Panel/></Col>
+  <Col xsOffset={8} xs={4}><Panel/></Col>
+  <Col xsOffset={7} xs={5}><Panel/></Col>
+  <Col xsOffset={6} xs={6}><Panel/></Col>
+  <Col xsOffset={5} xs={7}><Panel/></Col>
+  <Col xsOffset={4} xs={8}><Panel/></Col>
+  <Col xsOffset={3} xs={9}><Panel/></Col>
+  <Col xsOffset={2} xs={10}><Panel/></Col>
+  <Col xsOffset={1} xs={11}><Panel/></Col>
+</Row>
