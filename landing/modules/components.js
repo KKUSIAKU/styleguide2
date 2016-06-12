@@ -6,8 +6,7 @@ let switchExample = require('raw!./examples/Switch.example');
 let tabsExample = require('raw!./examples/Tabs.example');
 import React from 'react';
 import Playground from './playground/';
-import FormPlayground from './examples/forms';
-import { Alert, Button, Forms, Jumbotron, Spinner, Switch, Tabs } from '../../src/index';
+import { Alert, Button, Jumbotron, Spinner, Switch, Tabs } from '../../src/index';
 import classNames from 'classnames/bind';
 import styles from '../index.styl';
 const cx = classNames.bind(styles);
@@ -29,12 +28,6 @@ export default React.createClass({
           <section>
             <h3>Buttons</h3>
             <Playground className={cx("playground")} theme="sb" codeText={buttonExample}  scope={{React: React, Button: Button}} />
-          </section>
-          <section>
-            <h3>Forms</h3>
-            <div className={cx("playground")}>
-              <FormPlayground />
-            </div>
           </section>
           <section>
             <h3>Jumbotron</h3>

@@ -1,6 +1,5 @@
 export Alert from './components/Alert';
 export Button from './components/Button';
-export Forms from './components/Forms';
 export Grid from './components/Grid/Grid';
 export Row from './components/Grid/Row';
 export Col from './components/Grid/Col';
